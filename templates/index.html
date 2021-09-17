@@ -48,27 +48,48 @@
         function recommend() {
             $('#stock-box').empty()
             temp_html = `<div>
-                        <input type="radio" name="radioTxt" id="radioTxt1" value="kospi">코스피
+                        <input type="radio" name="radioMarket" id="radioTxt1" value="1">코스피
                         </div>
                         <div>
-                        <input type="radio" name="radioTxt" id="radioTxt2" value="kosdaq">코스닥
+                        <input type="radio" name="radioMarket" id="radioTxt2" value="2">코스닥
                         </div>
-                        <button type="button" class="btn btn-success" onclick="kospiKosdaq()">다음</button>`
+                        <button type="button" class="btn btn-success" onclick="marketChoose()">다음</button>`
 
             $('#stock-box').append(temp_html)
         }
 
-        // function kospiKosdaq() {
-        //     let radioVal = $('input[name="radioTxt"]:checked').val();
-        //     $.ajax({
-        //         type: "POST",
-        //         url: "/kos",
-        //         data: {kos_give: radioVal},
-        //         success: function (response) {
-        //             console.log(radioVal)
-        //             alert(response["msg"])
-        //         }
-        //     })
+        function marketChoose() {
+            let marketVal = $('input[name="radioMarket"]:checked').val();
+            console.log(marketVal)
+            $.ajax({
+                type: "POST",
+                url: "/",
+                data: {market_give: marketVal}
+            })
+            $('#stock-box').empty()
+            temp_html = `<div>
+                        <input type="radio" name="radioSector" id="radioTxt1" value="1">반도체와반도체장비
+                        </div>
+                        <div>
+                        <input type="radio" name="radioSector" id="radioTxt2" value="2">양방향미디어와서비스
+                        </div>
+                        <div>
+                        <input type="radio" name="radioSector" id="radioTxt3" value="3">자동차
+                        </div>
+                        <button type="button" class="btn btn-success" onclick="sectorChoose()">다음</button>`
+
+            $('#stock-box').append(temp_html)
+        }
+
+        function sectorChoose() {
+            let sectorVal = $('input[name="radioSector"]:checked').val();
+            console.log(sectorVal)
+            $.ajax({
+                type: "POST",
+                url: "/sector",
+                data: {sector_give: sectorVal}
+            })
+        }
 
 
     </script>

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 app = Flask(__name__)
 
 from pymongo import MongoClient
@@ -9,11 +9,27 @@ db = client.dbStock
 def home():
     return render_template('index.html')
 
-# 주문 목록보기(Read) API
-@app.route('/kos', methods=['POST'])
-def view_orders():
-    kos = list(db.dbStock.find({}, {'_id': False}))
-    return jsonify({'kos': kos})
+@app.route('/', methods=['POST'])
+def market_choose():
+    market_receive = request.form['market_give']
+    if market_receive == "1":
+        market = 'market-1'
+    else:
+        market = 'market-2'
+    print(market)
+    return jsonify()
+
+@app.route('/sector', methods=['POST'])
+def sector_choose():
+    sector_receive = request.form['market_give']
+    if sector_receive == "1":
+        sector = 'sector-1'
+    elif sector_receive == "2":
+        sector = 'sector-2'
+    else:
+        sector = 'sector-3'
+    print(sector)
+    return jsonify()
 
 
 if __name__ == '__main__':
