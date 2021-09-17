@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+    <title> 주식 종목 추천 (책임 안짐) </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+
+    <style>
+        * {
+            font-family: 'Jua', sans-serif;
+        }
+
+
+        .wrap {
+            width: 500px;
+            margin: auto;
+        }
+
+        .container {
+            padding-left: 50px;
+        }
+
+
+    </style>
+    <script>
+        function recommend() {
+            $('#stock-box').empty()
+            temp_html = `<div>
+                        <input type="radio" name="radioTxt" id="radioTxt1" value="kospi">코스피
+                        </div>
+                        <div>
+                        <input type="radio" name="radioTxt" id="radioTxt2" value="kosdaq">코스닥
+                        </div>
+                        <button type="button" class="btn btn-success" onclick="kospiKosdaq()">다음</button>`
+
+            $('#stock-box').append(temp_html)
+        }
+
+        function kospiKosdaq() {
+            let radioVal = $('input[name="radioTxt"]:checked').val();
+            $.ajax({
+                type: "POST",
+                url: "/kos",
+                data: {kos_give: radioVal},
+                success: function (response) {
+                    console.log(radioVal)
+                    alert(response["msg"])
+                }
+            })
+
+
+    </script>
+</head>
+
+<body>
+<div class="wrap">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1> 주식 종목 추천!! </h1>
+            <span>원하시는 종목을 추천합니다 </span>
+            <hr>
+            <div id="stock-box">
+                <button type="button" class="btn btn-primary" onclick="recommend()">추천 시작</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
