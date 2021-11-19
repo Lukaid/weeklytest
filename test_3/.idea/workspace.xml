@@ -5,20 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1fd095c-11cb-412d-82fc-8dc9cfadf113" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../spring_02/src/main/java/com/example/spring_02/controller/ArticleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring_02/src/main/java/com/example/spring_02/domain/Article.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring_02/src/main/java/com/example/spring_02/domain/Timestamped.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring_02/src/main/java/com/example/spring_02/dto/ArticleRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring_02/src/main/java/com/example/spring_02/repository/ArticleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring_02/src/main/java/com/example/spring_02/service/ArticleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring_02/src/main/resources/static/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring_02/src/main/resources/static/view.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/TimeAttack.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../data.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../templates/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../test_2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../test_2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test_4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../test_4/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test_5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../test_5/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +98,8 @@
       <option name="presentableId" value="Default" />
       <updated>1633683772046</updated>
       <workItem from="1633683776740" duration="5069000" />
-      <workItem from="1634285127336" duration="5044000" />
+      <workItem from="1634285127336" duration="5432000" />
+      <workItem from="1637313909043" duration="661000" />
     </task>
     <servers />
   </component>
